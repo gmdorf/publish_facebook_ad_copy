@@ -6,23 +6,27 @@ from facebook_business.adobjects.targeting import Targeting
 import datetime
 from facebook_business.adobjects.adset import AdSet
 from facebook_business.adobjects.adimage import AdImage
+from facebook_business import adobjects
 
-access_token = ''
-app_secret = ''
-app_id = ''
-ad_account_id = 'act_'
+
+access_token = 'EABZARULVZCm8MBAPDPyTjaqlq3rXWia6ZCVLOIX9nJRxMg7PgThvjuZCstZAPxBnZAjhrdFCTXSitIq9Q0AFsxaS4qSqjtCgJ54OCVhvzOozIfIig6ZAtu0QuXkRvhjKqL3jXxGFHnpimUYMGUgnoB7cKdYP22U2aXmHDX0Ii6cJSDGUBNs5TdKN7RVNBWqMKBX6sQQoyhxO1YOPMgZBKWyk'
+app_secret = '6aac5326d2949ba31c93f86623e33895'
+app_id = '6281856571907011'
+ad_account_id = 'act_912169106589507'
 page_id = ''
 FacebookAdsApi.init(access_token=access_token)
 
 
 params = {
-	'name': 'ENTER CAMPAIGN NAME HERE',
+	'name' : 'trxtest',
 	'objective': 'POST_ENGAGEMENT',
 	'status': 'ACTIVE',
+  'special_ad_categories': []
 }
 
 campaign_result = AdAccount(ad_account_id).create_campaign(params=params)
 print(campaign_result)
+
 
 today = datetime.date.today()
 start_time = str(today)
@@ -30,19 +34,19 @@ end_time = str(today + datetime.timedelta(weeks=1))
 
 adset = AdSet(parent_id=ad_account_id)
 adset.update({
-    'name': 'ENTER ADSET NAME HERE',
+    'name': 'my_adset',
     'campaign_id': campaign_result["id"],
     'daily_budget': 150,
     'billing_event': 'IMPRESSIONS',
     'optimization_goal': 'REACH',
     'bid_amount': 10,
-    'targeting': {'geo_locations': {'countries': {'TR'}},
+    'targeting': {'geo_locations': {'countries': {'ZA'}},
 				  'publisher_platforms': 'facebook'},
     'start_time': start_time,
     'end_time': end_time,
 })
 
-adset.remote_create(params={'status': 'ACTIVE'})
+adset.create_ad(params={'status': 'ACTIVE'})
 
 print(adset)
 
