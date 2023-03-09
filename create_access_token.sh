@@ -1,6 +1,3 @@
-curl \
--F "business_app=6281856571907011" \
--F "access_token=EABZARULVZCm8MBALRbWUkj4WB7dd3F9mRQmn1fBASXC4uaZCfnePFAOgZC7fYSVVeFV4XYfYvTZCHyTvEs30GlGdFoXZBYZAzG6me7QRSAH815uvIpzvMeCasE8c72CgFD7XgTeukkMuuU3CitkshSs6bS6hm4ZButCGDuxpwqCe3RWScz2aJs4WzZAzZAmXiOCIryycEehJjUx5lAMn38iwUo" \
-"https://graph.facebook.com/API-VERSION/APP-SCOPED-SYSTEM-USER-ID/applications"
+curl -i -X GET "https://graph.facebook.com/v16.0/oauth/access_token?grant_type=fb_exchange_token&client_id=6281856571907011&client_secret=6aac5326d2949ba31c93f86623e33895&fb_exchange_token=EABZARULVZCm8MBAPwH8gwT3uDQkzkeTykHSAJBeFhuPjvuZCc0iFZBZCbXqbZBSwFGEaPye7ZBq2yKN7bn7TLzBrkz3fcHzBdWN3XBDxvzCxbl0qPDBNdo90LdlxLkFPxekMhg93g4ZClkQZA48TRac4guaB3Ir1ZAT957RcF556v2wja5ixUVVdeu56HFiw6rSt4emebhsARiCBs5mWQwZBWgCyvrYS6zUypgZD" 
 
 printf "\n"
