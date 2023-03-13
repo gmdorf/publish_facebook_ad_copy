@@ -1,4 +1,4 @@
-curl --verbose -X  POST \
+curl -X  POST \
   -F 'name="C20"' \
   -F 'objective="LINK_CLICKS"' \
   -F 'status="PAUSED"' \
